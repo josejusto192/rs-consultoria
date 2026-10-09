@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#0C0B09;}
+*{box-sizing:border-box;}
+body{-webkit-font-smoothing:antialiased;font-family:'Hanken Grotesk',system-ui,sans-serif;color:#EDE8DF;}
+a{color:#D9B25F;text-decoration:none;}
+a:hover{color:#EDCD86;}
+</style>
+</helmet>
+
+<div style="background:#0C0B09;min-height:100vh;">
+
+  <!-- 01 — HEADER + HERO -->
+  <section data-screen-label="01 Hero" style="position:relative;z-index:3;background:#0C0B09;min-height:90vh;display:flex;flex-direction:column;">
+    <img src="img/0410.jpg" alt="Jucinei, RS Consultoria" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ bgPos }};filter:saturate(0.7) contrast(1.06) brightness(0.92);"></img>
+    <div style="position:absolute;inset:0;pointer-events:none;background:{{ overlay }};"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(12,11,9,0.7) 0%, rgba(12,11,9,0) 22%, rgba(12,11,9,0) 58%, rgba(12,11,9,0.92) 100%);"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0) 100%);"></div>
+
+    <div style="position:relative;z-index:4;display:flex;align-items:center;justify-content:center;gap:10px;height:34px;padding:0 16px;background:linear-gradient(90deg,#B88E3E 0%,#E8C77C 50%,#B88E3E 100%);color:#16120A;font-size:12.5px;font-weight:600;letter-spacing:0.02em;text-align:center;white-space:nowrap;overflow:hidden;">
+        <span>Representante autorizada HS Consórcios</span>
+        <span style="width:3px;height:3px;border-radius:50%;background:#16120A;opacity:0.6;"></span>
+        <span>Atendimento em Pelotas e todo o Rio Grande do Sul</span>
+      </div>
+    <div style="{{ navWrap }}">
+      <div style="{{ navPad }}">
+      <header style="{{ navBar }}">
+      <a href="#" style="display:flex;align-items:center;gap:14px;color:#EDE8DF;">
+        <svg width="44" height="44" viewBox="0 0 100 100" aria-label="RS Consultoria" style="flex-shrink:0;overflow:visible;"><defs><linearGradient id="rsg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D88E"></stop><stop offset="0.55" stop-color="#D4AA55"></stop><stop offset="1" stop-color="#A97E2F"></stop></linearGradient></defs><text x="2" y="84" font-family="Bodoni Moda, serif" font-size="92" font-weight="500" fill="url(#rsg1)">R</text><rect x="60.5" y="2" width="5" height="96" fill="url(#rsg1)"></rect><text x="36" y="90" font-family="Bodoni Moda, serif" font-size="100" font-weight="500" fill="url(#rsg1)" stroke="#0C0B09" stroke-width="3.5" paint-order="stroke">S</text></svg>
+        <div style="display:flex;flex-direction:column;gap:3px;line-height:1;">
+          <span style="font-family:'Bodoni Moda',serif;font-size:19px;font-weight:500;letter-spacing:0.02em;color:#EDE8DF;">RS Consultoria</span>
+          <span style="font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C9A55E;">Investimentos</span>
+        </div>
+      </a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex;align-items:center;gap:34px;font-size:14px;font-weight:500;letter-spacing:0.01em;">
+          <a href="#simulador" style="color:#D6CFC2;" style-hover="color:#FFFFFF;">Simulador</a>
+          <a href="#beneficios" style="color:#D6CFC2;" style-hover="color:#FFFFFF;">Benefícios</a>
+          <a href="#como-funciona" style="color:#D6CFC2;" style-hover="color:#FFFFFF;">Como funciona</a>
+          <a href="#quem-somos" style="color:#D6CFC2;" style-hover="color:#FFFFFF;">Quem somos</a>
+          <a href="#duvidas" style="color:#D6CFC2;" style-hover="color:#FFFFFF;">Dúvidas</a>
+        </nav>
+      </sc-if>
+      <a href="https://wa.me/5553991244136" target="_blank" style="display:flex;align-items:center;gap:10px;height:44px;padding:0 20px;border:1px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(12,11,9,0.35);backdrop-filter:blur(8px);color:#EDE8DF;font-size:14px;font-weight:600;transition:all .25s;" style-hover="background:#D9B25F;color:#14110B;border-color:#D9B25F;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        <span>WhatsApp</span>
+      </a>
+    </header>
+      </div>
+    </div>
+    <div style="height:90px;flex-shrink:0;"></div>
+
+    <div style="position:relative;z-index:2;flex:1;width:100%;max-width:1376px;margin:0 auto;padding:clamp(40px,7vh,96px) clamp(20px,4vw,48px) {{ heroPadB }};display:flex;flex-direction:column;justify-content:center;gap:clamp(48px,8vh,96px);">
+
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:600px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;text-wrap:pretty;">Representante autorizada HS Consórcios</span>
+        </div>
+        <h1 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:48px;line-height:1.08;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">Expanda seu patrimônio <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">sem imobilizar seu capital.</em></h1>
+        <p style="margin:0;font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:#D6CFC2;max-width:500px;text-wrap:pretty;">Transforme cartas de crédito imobiliário em uma estratégia de aquisição patrimonial. Planeje novos investimentos, preserve sua liquidez e evite os juros de um financiamento tradicional.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;padding-top:8px;">
+          <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:64px;padding:0 8px 0 30px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;letter-spacing:0.005em;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+            <span>Quero expandir meu patrimônio</span>
+            <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px);bottom:0;transform:translateY(50%);z-index:5;display:grid;grid-template-columns:{{ cardCols }};align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(22px,2.4vw,30px) clamp(22px,2.6vw,36px);background:rgba(20,18,14,0.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.14);border-radius:10px;box-shadow:0 30px 60px -24px rgba(0,0,0,0.7);">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#D9B25F;">Consultoria</span>
+          <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:clamp(21px,1.8vw,25px);line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;text-wrap:balance;">Seu próximo investimento começa com uma boa estratégia.</h3>
+        </div>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#D6CFC2;text-wrap:pretty;">Converse com um especialista e descubra como utilizar o consórcio imobiliário no seu planejamento patrimonial.</p>
+        <a href="https://wa.me/5553991244136" target="_blank" style="justify-self:start;display:inline-flex;align-items:center;gap:16px;height:54px;padding:0 6px 0 22px;border:1px solid rgba(255,255,255,0.3);border-radius:10px;color:#F6F1E8;font-size:14.5px;font-weight:600;white-space:nowrap;transition:all .3s;" style-hover="background:rgba(255,255,255,0.08);color:#F6F1E8;border-color:rgba(255,255,255,0.5);">
+          <span>Falar com um especialista</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:7px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E8C77C" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 — SIMULADOR -->
+  <section id="simulador" data-screen-label="02 Simulador" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:{{ simPadT }} clamp(20px,4vw,48px) 80px;display:flex;flex-direction:column;gap:clamp(48px,6vw,72px);">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:24px;max-width:760px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Simule seu próximo investimento</span>
+          </div>
+          <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Descubra as possibilidades para <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">seu próximo imóvel.</em></h2>
+        </div>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#5C5446;max-width:520px;text-wrap:pretty;">Simule sua carta de crédito e encontre alternativas alinhadas ao seu planejamento financeiro e patrimonial.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:{{ simPanelCols }};background:#FFFFFF;border:1px solid #E6E6E6;border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -48px rgba(20,17,11,0.28);">
+
+        <div style="display:flex;flex-direction:column;gap:36px;padding:clamp(24px,3vw,44px);">
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:12px;"><span style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#14110B;color:#E8C77C;font-size:12px;font-weight:700;">1</span><span style="font-size:16px;font-weight:600;color:#14110B;">Qual é o seu objetivo?</span></div>
+            <div style="display:grid;grid-template-columns:{{ objGrid }};gap:10px;">
+                <button type="button" onClick="{{ pick0 }}" style="{{ obj0 }}">
+                  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 33V13.5L18 7l9 6.5V33" stroke="currentColor"></path><rect x="13.5" y="16" width="3" height="3" stroke="currentColor"></rect><rect x="19.5" y="16" width="3" height="3" stroke="currentColor"></rect><rect x="13.5" y="22" width="3" height="3" stroke="currentColor"></rect><rect x="19.5" y="22" width="3" height="3" stroke="currentColor"></rect><path d="M16.5 33v-4.5h3V33" stroke="currentColor"></path><path d="M29 7.2a7 7 0 0 1 4.6 9.3" stroke="#B8902F"></path><path d="M34.6 13.6l-1 3-2.9-1.2" stroke="#B8902F"></path><path d="M31 33V21" stroke="currentColor"></path><path d="M5 33h30" stroke="#B8902F"></path></svg>
+                  <span style="font-size:14px;font-weight:600;line-height:1.3;text-align:left;">Imóvel para locação</span>
+                </button>
+                <button type="button" onClick="{{ pick1 }}" style="{{ obj1 }}">
+                  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="5.5" width="14" height="3.5" stroke="currentColor"></rect><path d="M8 12h24v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z" stroke="#B8902F"></path><path d="M9.5 17.5V33M30.5 17.5V33" stroke="currentColor"></path><rect x="12.5" y="21" width="9" height="7.5" stroke="currentColor"></rect><path d="M17 21v7.5" stroke="currentColor"></path><path d="M24.5 33V21h3.5v12" stroke="currentColor"></path><path d="M5 33h30" stroke="#B8902F"></path></svg>
+                  <span style="font-size:14px;font-weight:600;line-height:1.3;text-align:left;">Imóvel comercial</span>
+                </button>
+                <button type="button" onClick="{{ pick2 }}" style="{{ obj2 }}">
+                  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30l7-5h21l-7 5z" stroke="currentColor" stroke-dasharray="2 2.2"></path><path d="M20 25V6.5" stroke="currentColor"></path><path d="M12 9h22" stroke="currentColor"></path><path d="M20 5l-8 4M20 5l14 4" stroke="currentColor"></path><path d="M30 9v6" stroke="#B8902F"></path><path d="M30 15a1.8 1.8 0 1 0 1.8 1.8" stroke="#B8902F"></path><path d="M5 33h30" stroke="#B8902F"></path></svg>
+                  <span style="font-size:14px;font-weight:600;line-height:1.3;text-align:left;">Terreno ou construção</span>
+                </button>
+                <button type="button" onClick="{{ pick3 }}" style="{{ obj3 }}">
+                  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 23L20 12l13 11" stroke="currentColor"></path><path d="M10 20.5V33h20V20.5" stroke="currentColor"></path><path d="M26 15.4V10.5h2.6v7.1" stroke="currentColor"></path><path d="M17.5 33v-5a2.5 2.5 0 0 1 5 0v5" stroke="currentColor"></path><path d="M18.2 20.5a1.8 1.8 0 0 1 3.6 0" stroke="#B8902F"></path><path d="M5 33h30" stroke="#B8902F"></path></svg>
+                  <span style="font-size:14px;font-weight:600;line-height:1.3;text-align:left;">Moradia</span>
+                </button>
+                <button type="button" onClick="{{ pick4 }}" style="{{ obj4 }}">
+                  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 33v-6l3.5-3 3.5 3v6" stroke="currentColor"></path><path d="M15 33v-9.5l5-4.3 5 4.3V33" stroke="currentColor"></path><path d="M27 33V19.5l4.5-3.9 4.5 3.9V33" stroke="currentColor"></path><path d="M8 17.5L19 9l4 3 9-7" stroke="#B8902F"></path><path d="M28.5 5H32v3.5" stroke="#B8902F"></path><path d="M5 33h30" stroke="#B8902F"></path></svg>
+                  <span style="font-size:14px;font-weight:600;line-height:1.3;text-align:left;">Expansão patrimonial</span>
+                </button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:12px;"><span style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#14110B;color:#E8C77C;font-size:12px;font-weight:700;">2</span><span style="font-size:16px;font-weight:600;color:#14110B;">Quanto de crédito você precisa?</span></div>
+            <div style="display:flex;flex-direction:column;gap:18px;padding:24px;background:#FAFAF8;border:1px solid #EEEEEE;border-radius:12px;">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+                <span style="font-size:clamp(30px,3vw,40px);font-weight:600;letter-spacing:-0.03em;line-height:1;color:#14110B;font-variant-numeric:tabular-nums;">{{ creditLabel }}</span>
+                <span style="font-size:13px;color:#7A7262;">Arraste para ajustar</span>
+              </div>
+              <input type="range" min="100000" max="1000000" step="10000" value="{{ credit }}" onChange="{{ onCredit }}" style="width:100%;accent-color:#B8902F;cursor:pointer;height:6px;"></input>
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#7A7262;"><span>R$ 100 mil</span><span>R$ 1 milhão</span></div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <sc-for list="{{ creditQuick }}" as="c" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;gap:12px;"><span style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#14110B;color:#E8C77C;font-size:12px;font-weight:700;">3</span><span style="font-size:16px;font-weight:600;color:#14110B;">Em quantos meses?</span></div>
+            <div style="display:grid;grid-template-columns:{{ termGrid }};gap:6px;padding:6px;background:#F4F4F2;border-radius:12px;">
+              <sc-for list="{{ termBtns }}" as="t" hint-placeholder-count="5">
+                <button type="button" onClick="{{ t.onClick }}" style="{{ t.style }}"><span style="font-size:17px;font-weight:700;">{{ t.n }}</span><span style="font-size:12px;opacity:0.75;">meses</span></button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <button type="button" onClick="{{ toggleBid }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:0;background:transparent;border:0;cursor:pointer;font-family:inherit;text-align:left;">
+              <div style="display:flex;align-items:center;gap:12px;"><span style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#14110B;color:#E8C77C;font-size:12px;font-weight:700;">4</span><span style="font-size:16px;font-weight:600;color:#14110B;">Tenho um valor reservado para lance</span><span style="font-size:13px;color:#7A7262;">(Opcional)</span></div>
+              <span style="{{ bidTrack }}"><span style="{{ bidKnob }}"></span></span>
+            </button>
+            <sc-if value="{{ hasBid }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;display:flex;align-items:center;">
+                <span style="position:absolute;left:20px;font-size:16px;font-weight:600;color:#9A7430;pointer-events:none;">R$</span>
+                <input type="text" inputMode="numeric" placeholder="Informe o valor do lance" value="{{ bidText }}" onChange="{{ onBid }}" style="width:100%;height:54px;padding:0 18px 0 52px;background:#FAFAF8;border:1px solid #DDDDDD;border-radius:10px;font-family:inherit;font-size:16px;font-weight:500;color:#14110B;outline:none;"></input>
+              </div>
+            </sc-if>
+          </div>
+
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:24px;padding:clamp(24px,3vw,44px);background:radial-gradient(120% 90% at 50% 0%, #1E1B16 0%, #13110E 45%, #0C0B09 100%);color:#EDE8DF;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#D9B25F;">Resumo da simulação</span>
+            <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:24px;line-height:1.25;letter-spacing:-0.02em;color:#F6F1E8;text-wrap:balance;">Confira seu planejamento <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:#D9B25F;">antes de enviar.</em></h3>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.1);"><span style="font-size:14px;color:#A39B8C;">Objetivo</span><span style="font-size:15.5px;font-weight:600;color:#F6F1E8;text-align:right;">{{ objective }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.1);"><span style="font-size:14px;color:#A39B8C;">Crédito</span><span style="font-size:15.5px;font-weight:600;color:#F6F1E8;text-align:right;">{{ creditLabel }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.1);"><span style="font-size:14px;color:#A39B8C;">Prazo</span><span style="font-size:15.5px;font-weight:600;color:#F6F1E8;text-align:right;">{{ termLabel }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.1);"><span style="font-size:14px;color:#A39B8C;">Lance</span><span style="font-size:15.5px;font-weight:600;color:#F6F1E8;text-align:right;">{{ bidLabel }}</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:auto;">
+            <button type="button" onClick="{{ simulate }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;height:60px;padding:0 6px 0 24px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border:0;border-radius:10px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="transform:translateY(-1px);filter:brightness(1.06);">
+              <span>Receber simulação no WhatsApp</span>
+              <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:7px;background:rgba(20,17,11,0.12);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#16120A" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+            </button>
+            <p style="margin:0;font-size:12px;line-height:1.6;color:#8E8676;text-wrap:pretty;">Simulação estimativa, sujeita às condições do plano, taxas e reajustes contratuais. Não representa garantia de contemplação ou liberação de crédito.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — QUEBRA DE OBJEÇÃO -->
+  <section data-screen-label="03 Quebra de objeção" style="position:relative;background:radial-gradient(120% 90% at 50% 0%, #1E1B16 0%, #13110E 45%, #0C0B09 100%);color:#EDE8DF;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:grid;grid-template-columns:{{ objCols }};gap:clamp(40px,6vw,96px);align-items:center;">
+
+      <div style="position:relative;aspect-ratio:{{ objRatio }};border-radius:10px;overflow:hidden;background:#1A1814;">
+        <img src="img/0407.jpg" alt="Jucinei analisando estratégias" style="width:100%;height:100%;object-fit:cover;object-position:62% 40%;display:block;filter:saturate(0.7) contrast(1.05) brightness(0.9);"></img>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,11,9,0) 50%, rgba(12,11,9,0.55) 100%);"></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:560px;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Investimento inteligente</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">Não é apenas sobre comprar imóveis. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">É sobre saber como comprar.</em></h2>
+        <div style="display:flex;flex-direction:column;gap:18px;padding-left:24px;border-left:1px solid rgba(255,255,255,0.2);">
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#D6CFC2;text-wrap:pretty;">Investidores estratégicos entendem que a forma de aquisição também influencia o resultado do investimento.</p>
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#BDB5A7;text-wrap:pretty;">Com o consórcio imobiliário, você pode planejar novas compras, organizar seu capital e ampliar seu patrimônio sem juros de financiamento.</p>
+        </div>
+        <div style="display:flex;padding-top:8px;">
+          <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+            <span>Quero planejar meu próximo investimento</span>
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 — BENEFÍCIOS -->
+  <section id="beneficios" data-screen-label="04 Benefícios" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:48px;">
+
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:20px;max-width:720px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Estratégia patrimonial</span>
+          <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Faça seu capital trabalhar <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">a favor dos seus planos.</em></h2>
+        </div>
+
+      </div>
+
+      <div style="display:grid;grid-template-columns:{{ benCols }};gap:20px;">
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px;background:#FAFAF8;border:1px solid #EEEEEE;border-radius:10px;transition:all .3s;" style-hover="background:#FFFFFF;border-color:#DDDDDD;box-shadow:0 24px 48px -32px rgba(20,17,11,0.3);">
+          <div style="display:flex;align-items:center;">
+            <span style="display:flex;margin-left:-6px;"><svg width="64" height="64" viewBox="0 0 40 40" fill="none" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="6" ry="2.2" stroke="#B8902F"></ellipse><path d="M6 13v4.5c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V13" stroke="#14110B"></path><path d="M6 17.5V22c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2v-4.5" stroke="#14110B"></path><path d="M6 22v4.5c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V22" stroke="#14110B"></path><path d="M22 22l6.5-5.5L35 22" stroke="#14110B"></path><path d="M23.5 21v12M33.5 21v12" stroke="#14110B"></path><path d="M27 33v-4h3v4" stroke="#14110B"></path><path d="M5 33h30" stroke="#B8902F"></path></svg></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;">
+            <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#14110B;">Preserve sua liquidez</h3>
+            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#5C5446;text-wrap:pretty;">Planeje aquisições imobiliárias sem precisar desembolsar todo o valor do imóvel à vista.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px;background:#FAFAF8;border:1px solid #EEEEEE;border-radius:10px;transition:all .3s;" style-hover="background:#FFFFFF;border-color:#D9C79F;box-shadow:0 24px 48px -32px rgba(20,17,11,0.3);">
+          <div style="display:flex;align-items:center;">
+            <span style="display:flex;margin-left:-6px;"><svg width="64" height="64" viewBox="0 0 40 40" fill="none" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"><path d="M10 29V6.5h14l5 5V29" stroke="#14110B"></path><path d="M24 6.5v5h5" stroke="#14110B"></path><path d="M14 13h6M14 17h10" stroke="#14110B"></path><circle cx="16" cy="22.5" r="1.4" stroke="#14110B"></circle><circle cx="23" cy="26.5" r="1.4" stroke="#14110B"></circle><path d="M24 21l-9 7" stroke="#14110B"></path><path d="M12 30.5L28 18" stroke="#B8902F"></path><path d="M5 33h30" stroke="#B8902F"></path></svg></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;">
+            <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#14110B;">Evite juros de financiamento</h3>
+            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#5C5446;text-wrap:pretty;">Utilize uma modalidade de aquisição planejada, com taxas e condições contratuais definidas.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px;background:#FAFAF8;border:1px solid #EEEEEE;border-radius:10px;transition:all .3s;" style-hover="background:#FFFFFF;border-color:#D9C79F;box-shadow:0 24px 48px -32px rgba(20,17,11,0.3);">
+          <div style="display:flex;align-items:center;">
+            <span style="display:flex;margin-left:-6px;"><svg width="64" height="64" viewBox="0 0 40 40" fill="none" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"><path d="M6 33v-6l3.5-3 3.5 3v6" stroke="#14110B"></path><path d="M15 33v-9.5l5-4.3 5 4.3V33" stroke="#14110B"></path><path d="M18.6 33v-3.5h2.8V33" stroke="#14110B"></path><path d="M27 33V19.5l4.5-3.9 4.5 3.9V33" stroke="#14110B"></path><path d="M30.2 24h2.6M30.2 28h2.6" stroke="#14110B"></path><path d="M8 17.5L19 9l4 3 9-7" stroke="#B8902F"></path><path d="M28.5 5H32v3.5" stroke="#B8902F"></path><path d="M5 33h30" stroke="#B8902F"></path></svg></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;">
+            <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#14110B;">Amplie seu patrimônio</h3>
+            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#5C5446;text-wrap:pretty;">Estruture novas aquisições com foco no crescimento do seu portfólio imobiliário.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;">
+          <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+            <span>Conhecer minhas possibilidades</span>
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+          </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 — CARTA DE CRÉDITO IMOBILIÁRIO -->
+  <section data-screen-label="05 Carta de crédito" style="position:relative;background:radial-gradient(120% 90% at 50% 0%, #1E1B16 0%, #13110E 45%, #0C0B09 100%);color:#EDE8DF;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:40px;">
+
+      <div style="display:grid;grid-template-columns:{{ cartaCols }};gap:clamp(40px,5vw,80px);align-items:stretch;">
+
+        <div style="display:flex;flex-direction:column;gap:40px;position:{{ cartaSticky }};top:40px;align-self:start;">
+          <div style="display:flex;flex-direction:column;gap:24px;">
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Uma ferramenta, múltiplas possibilidades</span>
+            <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">Uma carta de crédito. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">Diferentes oportunidades para construir patrimônio.</em></h2>
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#BDB5A7;max-width:480px;text-wrap:pretty;">Da aquisição de imóveis para renda à expansão do seu portfólio, a carta de crédito imobiliário pode fazer parte de diferentes estratégias patrimoniais.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);">
+            <p style="margin:0;font-size:18px;font-weight:600;line-height:1.45;letter-spacing:-0.01em;color:#F6F1E8;max-width:420px;text-wrap:balance;">Diferentes objetivos. Uma estratégia alinhada ao seu momento.</p>
+            <div style="display:flex;">
+              <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+                <span>Quero explorar as possibilidades</span>
+                <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+              </a>
+            </div>
+            <p style="margin:0;font-size:12.5px;line-height:1.6;color:#8E8676;max-width:400px;text-wrap:pretty;">As modalidades de utilização estão sujeitas às regras do grupo, à contemplação e às condições da administradora.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;flex-direction:column;background:#14120E;border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all .3s;" style-hover="border-color:rgba(255,255,255,0.18);">
+            <div style="position:relative;aspect-ratio:16 / 7;background:#1C1914;overflow:hidden;">
+              <img src="img/locacao.png" alt="Imóveis para locação" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.75) contrast(1.04) brightness(0.88);"></img>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,11,9,0) 40%, rgba(12,11,9,0.75) 100%);"></div>
+              <span style="position:absolute;left:18px;bottom:16px;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:9px;background:rgba(12,11,9,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 33V13.5L18 7l9 6.5V33" stroke="#E9E2D4"></path><rect x="13.5" y="16" width="3" height="3" stroke="#E9E2D4"></rect><rect x="19.5" y="16" width="3" height="3" stroke="#E9E2D4"></rect><rect x="13.5" y="22" width="3" height="3" stroke="#E9E2D4"></rect><rect x="19.5" y="22" width="3" height="3" stroke="#E9E2D4"></rect><path d="M16.5 33v-4.5h3V33" stroke="#E9E2D4"></path><path d="M29 7.2a7 7 0 0 1 4.6 9.3" stroke="#D9B25F"></path><path d="M34.6 13.6l-1 3-2.9-1.2" stroke="#D9B25F"></path><path d="M31 33V21" stroke="#E9E2D4"></path><path d="M5 33h30" stroke="#D9B25F"></path></svg></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:22px 24px 26px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Imóveis para locação</h3>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Planeje a aquisição de propriedades com potencial para gerar renda recorrente.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;background:#14120E;border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all .3s;" style-hover="border-color:rgba(255,255,255,0.18);">
+            <div style="position:relative;aspect-ratio:16 / 7;background:#1C1914;overflow:hidden;">
+              <img src="img/comercial.png" alt="Imóveis comerciais" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.75) contrast(1.04) brightness(0.88);"></img>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,11,9,0) 40%, rgba(12,11,9,0.75) 100%);"></div>
+              <span style="position:absolute;left:18px;bottom:16px;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:9px;background:rgba(12,11,9,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="5.5" width="14" height="3.5" stroke="#E9E2D4"></rect><path d="M8 12h24v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z" stroke="#D9B25F"></path><path d="M9.5 17.5V33M30.5 17.5V33" stroke="#E9E2D4"></path><rect x="12.5" y="21" width="9" height="7.5" stroke="#E9E2D4"></rect><path d="M17 21v7.5" stroke="#E9E2D4"></path><path d="M24.5 33V21h3.5v12" stroke="#E9E2D4"></path><path d="M5 33h30" stroke="#D9B25F"></path></svg></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:22px 24px 26px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Imóveis comerciais</h3>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Amplie suas possibilidades com salas, lojas e espaços comerciais para investimento ou uso próprio.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;background:#14120E;border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all .3s;" style-hover="border-color:rgba(255,255,255,0.18);">
+            <div style="position:relative;aspect-ratio:16 / 7;background:#1C1914;overflow:hidden;">
+              <img src="img/terreno.png" alt="Terrenos e construção" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.75) contrast(1.04) brightness(0.88);"></img>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,11,9,0) 40%, rgba(12,11,9,0.75) 100%);"></div>
+              <span style="position:absolute;left:18px;bottom:16px;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:9px;background:rgba(12,11,9,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30l7-5h21l-7 5z" stroke="#E9E2D4" stroke-dasharray="2 2.2"></path><path d="M20 25V6.5" stroke="#E9E2D4"></path><path d="M12 9h22" stroke="#E9E2D4"></path><path d="M20 5l-8 4M20 5l14 4" stroke="#E9E2D4"></path><path d="M17.5 25h5" stroke="#E9E2D4"></path><path d="M30 9v6" stroke="#D9B25F"></path><path d="M30 15a1.8 1.8 0 1 0 1.8 1.8" stroke="#D9B25F"></path><circle cx="6" cy="30" r="1.1" fill="#D9B25F" stroke="#D9B25F"></circle><circle cx="27" cy="30" r="1.1" fill="#D9B25F" stroke="#D9B25F"></circle><circle cx="34" cy="25" r="1.1" fill="#D9B25F" stroke="#D9B25F"></circle><path d="M5 33h30" stroke="#D9B25F"></path></svg></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:22px 24px 26px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Terrenos e construção</h3>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Explore oportunidades de aquisição de terrenos e projetos de construção com planejamento.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;background:#14120E;border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;transition:all .3s;" style-hover="border-color:rgba(255,255,255,0.18);">
+            <div style="position:relative;aspect-ratio:16 / 7;background:#1C1914;overflow:hidden;">
+              <img src="img/moradia.png" alt="Moradia e patrimônio" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(0.75) contrast(1.04) brightness(0.88);"></img>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,11,9,0) 40%, rgba(12,11,9,0.75) 100%);"></div>
+              <span style="position:absolute;left:18px;bottom:16px;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:9px;background:rgba(12,11,9,0.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.16);"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 23L20 12l13 11" stroke="#E9E2D4"></path><path d="M10 20.5V33h20V20.5" stroke="#E9E2D4"></path><path d="M26 15.4V10.5h2.6v7.1" stroke="#E9E2D4"></path><path d="M17.5 33v-5a2.5 2.5 0 0 1 5 0v5" stroke="#E9E2D4"></path><path d="M18.2 20.5a1.8 1.8 0 0 1 3.6 0" stroke="#D9B25F"></path><path d="M9 36.5h22" stroke="#D9B25F"></path><path d="M5 33h30" stroke="#D9B25F"></path></svg></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:22px 24px 26px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Moradia e patrimônio</h3>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Conquiste um imóvel para uso próprio sem precisar pagar o valor integral à vista.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 — PARA QUEM É -->
+  <section data-screen-label="06 Para quem é" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:grid;grid-template-columns:{{ paraCols }};gap:clamp(40px,6vw,96px);align-items:center;">
+
+      <div style="position:relative;aspect-ratio:{{ paraRatio }};border-radius:10px;overflow:hidden;background:#EEEEEE;">
+        <img src="img/3174.jpg" alt="Jucinei, RS Consultoria" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;filter:saturate(0.8) contrast(1.03);"></img>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:580px;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Para quem pensa como investidor</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Seu próximo imóvel pode ser <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">o próximo passo do seu patrimônio.</em></h2>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Se você deseja ampliar sua carteira de imóveis, investir em propriedades para locação ou planejar novas aquisições sem comprometer todo o capital de uma vez, o consórcio imobiliário pode ser uma alternativa.</p>
+        <div style="display:flex;flex-direction:column;gap:28px;padding-top:28px;border-top:1px solid #E6E6E6;">
+          <p style="margin:0;font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-0.015em;color:#14110B;max-width:440px;text-wrap:balance;">Investir em patrimônio começa com decisões bem planejadas.</p>
+          <div style="display:flex;">
+            <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+              <span>Quero avaliar minha estratégia</span>
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 07 — COMO FUNCIONA -->
+  <section id="como-funciona" data-screen-label="07 Como funciona" style="position:relative;background:radial-gradient(120% 90% at 50% 0%, #1E1B16 0%, #13110E 45%, #0C0B09 100%);color:#EDE8DF;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:56px;">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Simples, estratégico e personalizado</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">Sua estratégia começa com <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">três passos.</em></h2>
+      </div>
+
+      <div ref="{{ stepsRef }}" style="position:relative;display:grid;grid-template-columns:{{ stepCols }};gap:48px clamp(32px,4vw,64px);border-top:1px solid rgba(255,255,255,0.14);">
+          <span style="{{ stepFill }}"></span>
+          <div style="position:relative;display:flex;flex-direction:column;gap:20px;padding-top:36px;">
+            <span data-step-dot="0" style="{{ dot0 }}"></span>
+            <span style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:56px;line-height:1;color:#D9B25F;">01</span>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:340px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Entendemos seus objetivos</h3>
+              <p style="margin:0;font-size:15.5px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Analisamos seu perfil, sua capacidade financeira e seus planos de aquisição imobiliária.</p>
+            </div>
+          </div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:20px;padding-top:36px;">
+            <span data-step-dot="1" style="{{ dot1 }}"></span>
+            <span style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:56px;line-height:1;color:#D9B25F;">02</span>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:340px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Planejamos sua estratégia</h3>
+              <p style="margin:0;font-size:15.5px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Avaliamos cartas de crédito, prazos, custos e condições alinhadas ao seu objetivo.</p>
+            </div>
+          </div>
+          <div style="position:relative;display:flex;flex-direction:column;gap:20px;padding-top:36px;">
+            <span data-step-dot="2" style="{{ dot2 }}"></span>
+            <span style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:56px;line-height:1;color:#D9B25F;">03</span>
+            <div style="display:flex;flex-direction:column;gap:10px;max-width:340px;">
+              <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-0.015em;color:#F6F1E8;">Orientamos sua jornada</h3>
+              <p style="margin:0;font-size:15.5px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Você recebe orientação especializada sobre o consórcio e as possibilidades de contemplação por sorteio ou lance, sem prazo garantido.</p>
+            </div>
+          </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;">
+        <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+          <span>Quero falar com um especialista</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+<!-- 07B — CONSÓRCIO X FINANCIAMENTO -->
+  <section data-screen-label="08 Consórcio x Financiamento" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:48px;">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Consórcio x Financiamento</span>
+        <h2 style="margin:0;max-width:760px;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Duas formas de comprar um imóvel. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">Resultados bem diferentes.</em></h2>
+        <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Entenda as principais diferenças e avalie qual modalidade faz mais sentido para o seu planejamento.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;border:1px solid #E6E6E6;border-radius:14px;overflow:hidden;{{ cmpMinW }}">
+        <div style="overflow-x:auto;">
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:24px 28px;"></div>
+            <div style="padding:24px 28px;background:#14110B;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Recomendado</span>
+              <span style="font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#F6F1E8;">Consórcio imobiliário</span>
+            </div>
+            <div style="padding:24px 28px;display:flex;flex-direction:column;justify-content:flex-end;">
+              <span style="font-size:20px;font-weight:600;letter-spacing:-0.015em;color:#14110B;">Financiamento</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:22px 28px;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#7A7262;display:flex;align-items:center;">Juros</div>
+            <div style="padding:22px 28px;background:#14110B;display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;line-height:1.5;color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Sem juros de financiamento</span></div>
+            <div style="padding:22px 28px;display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:#5C5446;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 12h12"></path></svg><span>Juros ao longo de todo o contrato</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#7A7262;display:flex;align-items:center;">Entrada</div>
+            <div style="padding:22px 28px;background:#14110B;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;line-height:1.5;color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Não exige entrada</span></div>
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:#5C5446;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 12h12"></path></svg><span>Geralmente exige entrada</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#7A7262;display:flex;align-items:center;">Custos</div>
+            <div style="padding:22px 28px;background:#14110B;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;line-height:1.5;color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Taxa de administração e encargos previstos em contrato</span></div>
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:#5C5446;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 12h12"></path></svg><span>Juros, seguros e tarifas bancárias</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#7A7262;display:flex;align-items:center;">Acesso ao crédito</div>
+            <div style="padding:22px 28px;background:#14110B;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;line-height:1.5;color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Após contemplação por sorteio ou lance</span></div>
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:#5C5446;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 12h12"></path></svg><span>Após aprovação de crédito</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:{{ cmpCols }};">
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#7A7262;display:flex;align-items:center;">Ideal para</div>
+            <div style="padding:22px 28px;background:#14110B;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:500;line-height:1.5;color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Quem planeja aquisições com visão de médio e longo prazo</span></div>
+            <div style="padding:22px 28px;border-top:1px solid #EEEEEE;display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.5;color:#5C5446;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A39B8C" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M6 12h12"></path></svg><span>Quem precisa do imóvel de forma imediata</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+        <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+          <span>Quero comparar para o meu caso</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+        </a>
+        <p style="margin:0;max-width:640px;text-align:center;font-size:12.5px;line-height:1.6;color:#7A7262;text-wrap:pretty;">Comparação ilustrativa. As condições variam conforme a administradora, a instituição financeira e o contrato.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 08 — QUEM SOMOS -->
+  <section id="quem-somos" data-screen-label="08 Quem somos" style="position:relative;background:#0C0B09;color:#EDE8DF;overflow:hidden;">
+    <div style="position:{{ quemImgPos }};top:0;right:0;bottom:0;width:{{ quemImgW }};height:{{ quemImgH }};">
+      <img src="img/0403.jpg" alt="Escritório RS Consultoria" style="width:100%;height:100%;object-fit:cover;object-position:38% 40%;display:block;filter:saturate(0.8) contrast(1.05) brightness(0.9);"></img>
+      <div style="position:absolute;inset:0;background:{{ quemFade }};"></div>
+    </div>
+
+    <div style="position:relative;max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);">
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:{{ quemTextW }};">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Quem somos</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">Mais do que cartas de crédito. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">Uma empresa focada em planejamento patrimonial.</em></h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#BDB5A7;text-wrap:pretty;">A história da RS Consultoria começou em <span style="background:rgba(217,178,95,0.14);color:#E8C77C;padding:1px 6px;border-radius:7px;">[ano de fundação]</span>, a partir de <span style="background:rgba(217,178,95,0.14);color:#E8C77C;padding:1px 6px;border-radius:7px;">[origem real da empresa e motivação de sua criação]</span>.</p>
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#BDB5A7;text-wrap:pretty;">Desde então, <span style="background:rgba(217,178,95,0.14);color:#E8C77C;padding:1px 6px;border-radius:7px;">[inserir o principal marco da trajetória e evolução da empresa]</span>.</p>
+          <p style="margin:0;font-size:17px;line-height:1.65;color:#BDB5A7;text-wrap:pretty;">Hoje, como representante autorizada HS Consórcios, a RS Consultoria oferece assessoria especializada para quem busca planejar aquisições imobiliárias com mais clareza e inteligência financeira.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.14);">
+          <p style="margin:0;font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-0.015em;color:#F6F1E8;text-wrap:balance;">Nossa proposta é simples: conectar seus objetivos patrimoniais às estratégias adequadas para alcançá-los.</p>
+          <div style="display:flex;">
+            <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:56px;padding:0 6px 0 26px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+              <span>Conhecer nossas soluções</span>
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 — HISTÓRIA DO JUCINEI -->
+  <section data-screen-label="09 Jucinei" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:64px;">
+
+      <div style="display:grid;grid-template-columns:{{ jucCols }};gap:clamp(40px,6vw,96px);align-items:center;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="position:relative;aspect-ratio:{{ jucRatio }};border-radius:10px;overflow:hidden;background:#EEEEEE;">
+            <img src="img/0315.jpg" alt="Jucinei" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;filter:saturate(0.85) contrast(1.03);"></img>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;">
+            <span style="font-size:16px;font-weight:600;color:#14110B;">Jucinei</span>
+            <span style="color:#C9BFAE;">|</span>
+            <span style="font-size:15px;color:#5C5446;"><span style="background:#F4EEDF;color:#8A6A2E;padding:1px 6px;border-radius:7px;">[Cargo na RS Consultoria]</span></span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:28px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">A experiência por trás da estratégia</span>
+          <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Jucinei. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">Uma trajetória dedicada a transformar decisões em oportunidades.</em></h2>
+          <div style="display:flex;flex-direction:column;gap:16px;max-width:560px;">
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Jucinei iniciou sua trajetória profissional em <span style="background:#F4EEDF;color:#8A6A2E;padding:1px 6px;border-radius:7px;">[ano e área de atuação]</span>. Ao longo do caminho, <span style="background:#F4EEDF;color:#8A6A2E;padding:1px 6px;border-radius:7px;">[inserir experiências, desafios e conquistas reais que marcaram sua história]</span>.</p>
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Foi essa experiência que contribuiu para sua visão sobre a importância do planejamento na construção de patrimônio.</p>
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Hoje, <span style="background:#F4EEDF;color:#8A6A2E;padding:1px 6px;border-radius:7px;">[inserir cargo e papel real na RS Consultoria]</span>, Jucinei leva essa visão para o atendimento de clientes que desejam tomar decisões imobiliárias mais conscientes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:32px;background:#0C0B09;border-radius:10px;display:flex;justify-content:center;">
+        <p style="margin:0;max-width:900px;text-align:center;font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,2.6vw,32px);font-weight:600;line-height:1.3;letter-spacing:-0.02em;color:#F6F1E8;text-wrap:balance;">Porque construir patrimônio não depende apenas de oportunidades. <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">Depende das decisões que você toma.</em></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10 — DEPOIMENTOS -->
+  <section data-screen-label="10 Depoimentos" style="position:relative;background:#FFFFFF;color:#14110B;overflow:hidden;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:56px;">
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Quem confia, compartilha</span>
+        <h2 style="margin:0;max-width:760px;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">A confiança de quem já escolheu <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">a RS Consultoria.</em></h2>
+        <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#5C5446;text-wrap:pretty;">Conheça a experiência de clientes que buscaram orientação especializada para planejar suas aquisições imobiliárias.</p>
+      </div>
+
+      <div ref="{{ depWrap }}" onMouseEnter="{{ depPause }}" onMouseLeave="{{ depResume }}" style="position:relative;">
+        <div style="{{ depTrack }}">
+          <sc-for list="{{ depItems }}" as="d" hint-placeholder-count="3">
+            <div style="{{ d.style }}" style-hover="background:#FFFFFF;border-color:#DDDDDD;transform:translateY(-6px);box-shadow:0 30px 60px -32px rgba(20,17,11,0.28);">
+              <p style="margin:0;flex:1;font-size:17px;line-height:1.65;color:#3A3328;text-wrap:pretty;">{{ d.text }}</p>
+              <div style="display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid #E6E6E6;">
+                <span style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#14110B;border:1px solid #14110B;flex-shrink:0;font-size:14px;font-weight:600;letter-spacing:0.04em;color:#E8C77C;">{{ d.initials }}</span>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <span style="font-size:15.5px;font-weight:600;color:#14110B;">{{ d.name }}</span>
+                  <span style="font-size:13.5px;color:#7A7262;">{{ d.role }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:center;gap:28px;margin-top:-16px;">
+        <button type="button" aria-label="Anterior" onClick="{{ depPrev }}" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;background:transparent;border:1px solid #DDDDDD;color:#14110B;cursor:pointer;transition:all .25s;" style-hover="background:#14110B;color:#FFFFFF;border-color:#14110B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <sc-for list="{{ depDots }}" as="dot" hint-placeholder-count="3">
+            <button type="button" aria-label="Ir para depoimento" onClick="{{ dot.onClick }}" style="{{ dot.style }}"></button>
+          </sc-for>
+        </div>
+        <button type="button" aria-label="Próximo" onClick="{{ depNext }}" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;background:transparent;border:1px solid #DDDDDD;color:#14110B;cursor:pointer;transition:all .25s;" style-hover="background:#14110B;color:#FFFFFF;border-color:#14110B;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 12 — CHAMADA FINAL -->
+  <section data-screen-label="12 Chamada final" style="position:relative;overflow:hidden;background:#0C0B09;color:#EDE8DF;">
+    <img src="img/0408.jpg" alt="Jucinei analisando estratégia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ ctaPos }};filter:saturate(0.65) contrast(1.05) brightness(0.85);"></img>
+    <div style="position:absolute;inset:0;background:{{ ctaOverlay }};"></div>
+
+    <div style="position:relative;max-width:1376px;margin:0 auto;padding:120px clamp(20px,4vw,48px);">
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:600px;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Seu patrimônio merece uma estratégia</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-0.03em;color:#F6F1E8;text-wrap:balance;">O próximo passo do seu patrimônio começa com <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#D9B25F;">uma decisão inteligente.</em></h2>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#D6CFC2;max-width:520px;text-wrap:pretty;">Descubra como utilizar o consórcio imobiliário para planejar novas aquisições e ampliar suas possibilidades de investimento.</p>
+        <div style="display:flex;flex-direction:column;gap:20px;padding-top:8px;">
+          <p style="margin:0;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:#F6F1E8;">Converse com quem entende de planejamento patrimonial.</p>
+          <div style="display:flex;">
+            <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:22px;height:64px;padding:0 8px 0 30px;background:linear-gradient(135deg,#E8C77C 0%,#D4AA55 55%,#B88E3E 100%);color:#16120A;border-radius:10px;font-size:16px;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,244,214,0.55);transition:all .3s;" style-hover="color:#16120A;transform:translateY(-1px);filter:brightness(1.06);">
+              <span>Quero falar com um especialista</span>
+              <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:7px;background:#14110B;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8.5 7H17v8.5"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 — PERGUNTAS FREQUENTES -->
+  <section id="duvidas" data-screen-label="11 Perguntas frequentes" style="position:relative;background:#FFFFFF;color:#14110B;">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px);display:grid;grid-template-columns:{{ faqCols }};gap:40px clamp(40px,6vw,96px);align-items:start;">
+
+      <div style="display:flex;flex-direction:column;gap:24px;position:{{ cartaSticky }};top:40px;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#8A6A2E;">Tire suas dúvidas</span>
+        <h2 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:40px;line-height:1.1;letter-spacing:-0.03em;color:#14110B;text-wrap:balance;">Tudo o que você precisa saber <em style="font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;letter-spacing:-0.01em;color:#8A6A2E;">antes de dar o próximo passo.</em></h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;padding:32px;background:#FFFFFF;border:1px solid #E6E6E6;border-radius:10px;box-shadow:0 24px 48px -36px rgba(20,17,11,0.35);">
+          <h3 style="margin:0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-0.015em;color:#14110B;">Ainda com dúvidas?</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#5C5446;text-wrap:pretty;">Fale diretamente com um especialista e receba orientação sobre a melhor estratégia para o seu objetivo.</p>
+          <div style="display:flex;padding-top:12px;">
+            <a href="https://wa.me/5553991244136" target="_blank" style="display:inline-flex;align-items:center;gap:20px;height:54px;padding:0 5px 0 22px;background:#14110B;color:#F6F1E8;border-radius:10px;font-size:15px;font-weight:600;transition:all .3s;" style-hover="color:#F6F1E8;background:#2A251C;">
+              <span>Conversar no WhatsApp</span>
+              <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:7px;background:rgba(255,255,255,0.08);flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E8C77C" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;border-top:1px solid #E6E6E6;">
+        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;border-bottom:1px solid #E6E6E6;">
+            <button type="button" onClick="{{ q.toggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;padding:26px 0;background:transparent;border:0;cursor:pointer;text-align:left;font-family:inherit;" style-hover="opacity:0.75;">
+              <span style="font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-0.01em;color:#14110B;text-wrap:pretty;">{{ q.q }}</span>
+              <span style="{{ q.iconBox }}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="{{ q.vPath }}"></path></svg>
+              </span>
+            </button>
+            <div style="{{ q.panel }}">
+              <div style="overflow:hidden;">
+                <p style="margin:0;padding:0 64px 26px 0;font-size:16px;line-height:1.7;color:#5C5446;text-wrap:pretty;">{{ q.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer data-screen-label="13 Rodapé" style="position:relative;background:#080706;color:#EDE8DF;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1376px;margin:0 auto;padding:80px clamp(20px,4vw,48px) 32px;display:flex;flex-direction:column;gap:56px;">
+
+      <div style="display:grid;grid-template-columns:{{ footCols }};gap:48px clamp(32px,4vw,64px);">
+
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <a href="#" style="display:flex;align-items:center;gap:14px;color:#EDE8DF;">
+            <svg width="50" height="50" viewBox="0 0 100 100" aria-label="RS Consultoria" style="flex-shrink:0;overflow:visible;"><defs><linearGradient id="rsg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D88E"></stop><stop offset="0.55" stop-color="#D4AA55"></stop><stop offset="1" stop-color="#A97E2F"></stop></linearGradient></defs><text x="2" y="84" font-family="Bodoni Moda, serif" font-size="92" font-weight="500" fill="url(#rsg2)">R</text><rect x="60.5" y="2" width="5" height="96" fill="url(#rsg2)"></rect><text x="36" y="90" font-family="Bodoni Moda, serif" font-size="100" font-weight="500" fill="url(#rsg2)" stroke="#0C0B09" stroke-width="3.5" paint-order="stroke">S</text></svg>
+            <div style="display:flex;flex-direction:column;gap:4px;line-height:1;">
+              <span style="font-family:'Bodoni Moda',serif;font-size:21px;font-weight:500;letter-spacing:0.02em;color:#EDE8DF;">RS Consultoria</span>
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C9A55E;">Investimentos</span>
+            </div>
+          </a>
+          <div style="display:flex;flex-direction:column;gap:8px;max-width:340px;">
+            <p style="margin:0;font-size:15px;font-weight:600;color:#F6F1E8;">Representante autorizada HS Consórcios.</p>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#BDB5A7;text-wrap:pretty;">Planejamento, estratégia e assessoria especializada em cartas de crédito imobiliário.</p>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <a href="https://www.instagram.com/rsconsultoriaoficial/" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;border:1px solid rgba(255,255,255,0.14);color:#D6CFC2;transition:all .25s;" style-hover="background:#F6F1E8;color:#14110B;border-color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="3.8"></circle><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"></circle></svg></a>
+            <a href="https://www.facebook.com/RSConsorcioss/" target="_blank" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;border:1px solid rgba(255,255,255,0.14);color:#D6CFC2;transition:all .25s;" style-hover="background:#F6F1E8;color:#14110B;border-color:#F6F1E8;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.1v3h2.5V21h2.9z"></path></svg></a>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Navegação</span>
+          <nav style="display:flex;flex-direction:column;gap:12px;">
+            <a href="#simulador" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Simulador</a>
+            <a href="#beneficios" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Benefícios</a>
+            <a href="#como-funciona" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Como funciona</a>
+            <a href="#quem-somos" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Quem somos</a>
+            <a href="#duvidas" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Dúvidas</a>
+          </nav>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Institucional</span>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="#" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Política de Privacidade</a>
+            <a href="#" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">Termos de Uso</a>
+            <a href="https://wa.me/5553991244136" target="_blank" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">WhatsApp</a>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#D9B25F;">Contato</span>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B25F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"></path></svg><a href="tel:+5553991244136" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">(53) 99124-4136</a></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D9B25F" style="flex-shrink:0;margin-top:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg><a href="https://wa.me/5553991244136" target="_blank" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">WhatsApp: (53) 99124-4136</a></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B25F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"></rect><path d="M4 7l8 6 8-6"></path></svg><a href="mailto:contato@rsconsultoria.com.br" style="font-size:15px;color:#BDB5A7;transition:color .2s;" style-hover="color:#F6F1E8;">contato@rsconsultoria.com.br</a></div>
+            <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B25F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg><span style="display:flex;flex-direction:column;font-size:15px;line-height:1.55;color:#BDB5A7;"><span>Av. Bento Gonçalves, 3411 - Porto</span><span>Pelotas - RS, 96015-140</span></span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="margin:0;font-size:12.5px;line-height:1.7;color:#8E8676;max-width:900px;text-wrap:pretty;">O consórcio está sujeito às condições da administradora, taxas, reajustes e regras contratuais. A contemplação ocorre por sorteio ou lance, sem prazo garantido. Não há garantia de rentabilidade ou valorização imobiliária.</p>
+        <span style="font-size:12.5px;color:#6F685B;">© 2026 RS Consultoria Investimentos. Todos os direitos reservados.</span>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, objective: 'Imóvel para locação', credit: '', term: '', bid: '', error: '' };
+  stepsRef = React.createRef();
+  depWrap = React.createRef();
+  FAQ = [
+    ['O consórcio é uma boa alternativa para investidores imobiliários?', 'Pode ser uma solução para quem deseja planejar novas aquisições e possui flexibilidade para aguardar a contemplação. A escolha depende dos objetivos e da capacidade financeira de cada investidor.'],
+    ['O consórcio imobiliário possui juros?', 'Não possui juros de financiamento, mas inclui taxa de administração e pode ter fundo de reserva, seguros e outros encargos previstos em contrato.'],
+    ['Posso utilizar minha carta para imóveis de investimento?', 'Sim, existem possibilidades de utilização para aquisição de imóveis residenciais, comerciais, terrenos e construção, conforme as condições do plano e as regras da administradora.'],
+    ['Quando posso utilizar minha carta de crédito?', 'Após a contemplação por sorteio ou lance e o cumprimento das exigências para liberação do crédito. Não existe prazo garantido para contemplação.'],
+    ['Preciso ter todo o dinheiro disponível para adquirir um imóvel?', 'Não é necessário pagar o valor integral do imóvel à vista ao contratar um consórcio. O planejamento envolve parcelas e, quando aplicável, valores destinados a lances, além dos custos previstos em contrato.'],
+    ['O consórcio garante retorno financeiro?', 'Não. O consórcio é uma modalidade de aquisição planejada, não uma aplicação financeira. O retorno de um eventual investimento imobiliário depende das características do imóvel e das condições do mercado.']
+  ];
+  DEPS = [
+    { text: 'O Jucinei entendeu exatamente o que eu buscava. Saí da primeira conversa com uma estratégia clara para adquirir meu segundo imóvel de locação, sem mexer na reserva que eu tinha guardado.', name: 'Ricardo Almeida', role: 'Empresário', initials: 'RA' },
+    { text: 'Atendimento sério e transparente do início ao fim. Todas as taxas e condições foram explicadas com calma, e isso me deu segurança para seguir com o consórcio.', name: 'Fernanda Costa', role: 'Médica', initials: 'FC' },
+    { text: 'Fui acompanhado em cada etapa, da escolha da carta até a contemplação. Hoje tenho uma sala comercial no meu nome e um plano para as próximas aquisições.', name: 'Marcelo Souza', role: 'Engenheiro civil', initials: 'MS' }
+  ];
+  depGo(n) {
+    const N = this.DEPS.length;
+    this.setState({ depIdx: n, depAnim: true });
+    clearTimeout(this.depT);
+    this.depT = setTimeout(() => {
+      let i = this.state.depIdx;
+      if (i >= 2 * N) i -= N; else if (i < N) i += N;
+      if (i !== this.state.depIdx) this.setState({ depIdx: i, depAnim: false });
+    }, 720);
+  }
+  depTick() { clearInterval(this.depI); this.depI = setInterval(() => { if (!this.state.depPaused) this.depGo((this.state.depIdx ?? 3) + 1); }, 4500); }
+  componentDidMount() {
+    this.onR = () => { this.setState({ w: window.innerWidth }); this.onS(); };
+    this.onS = () => {
+      const el = this.stepsRef.current; if (!el) return;
+      const r = el.getBoundingClientRect(), vh = window.innerHeight;
+      const p = Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (vh * 0.5)));
+      const dots = [...el.querySelectorAll('[data-step-dot]')].map(d => (d.getBoundingClientRect().left - r.left) / r.width);
+      const dw = this.depWrap.current ? this.depWrap.current.getBoundingClientRect().width : 0;
+      this.setState({ stepP: p, dotPos: dots, depW: dw, scrolled: window.scrollY > 40, sy: window.scrollY });
+    };
+    window.addEventListener('resize', this.onR);
+    window.addEventListener('scroll', this.onS, { passive: true });
+    setTimeout(this.onS, 50);
+    this.depTick();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); window.removeEventListener('scroll', this.onS); clearInterval(this.depI); clearTimeout(this.depT); }
+  renderVals() {
+    const w = this.state.w;
+    const wide = w >= 1080;
+    const overlay = w >= 1180
+      ? 'linear-gradient(90deg, rgba(12,11,9,0.94) 0%, rgba(12,11,9,0.84) 34%, rgba(12,11,9,0.55) 52%, rgba(12,11,9,0.08) 100%)'
+      : w >= 820
+      ? 'linear-gradient(90deg, rgba(12,11,9,0.95) 0%, rgba(12,11,9,0.88) 45%, rgba(12,11,9,0.6) 62%, rgba(12,11,9,0.15) 100%)'
+      : 'linear-gradient(180deg, rgba(12,11,9,0.55) 0%, rgba(12,11,9,0.85) 45%, rgba(12,11,9,0.95) 100%)';
+    const bgPos = w >= 1180 ? '72% 30%' : w >= 820 ? '88% 30%' : '78% 20%';
+    const cardCols = w >= 960 ? 'minmax(0,1.1fr) minmax(0,1fr) auto' : 'minmax(0,1fr)';
+    const brl = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: n < 10000 ? 2 : 0, minimumFractionDigits: n < 10000 ? 2 : 0 });
+    const s = this.state;
+    const objList = ['Imóvel para locação', 'Imóvel comercial', 'Terreno ou construção', 'Moradia', 'Expansão patrimonial'];
+    const credit = +(s.credit || 300000), term = +(s.term || 180);
+    const short = n => n >= 1000000 ? 'R$ 1 milhão' : 'R$ ' + (n / 1000) + ' mil';
+    const objCard = on => ({ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between', gap: '14px', minHeight: '112px', padding: '16px', borderRadius: '12px', border: on ? '1px solid #14110B' : '1px solid #E6E6E6', background: on ? '#14110B' : '#FFFFFF', color: on ? '#F6F1E8' : '#14110B', fontFamily: 'inherit', cursor: 'pointer', transition: 'all .25s', boxShadow: on ? '0 16px 30px -18px rgba(20,17,11,0.6)' : 'none' });
+    const objVals = Object.fromEntries(objList.flatMap((l, i) => [['obj' + i, objCard(s.objective === l)], ['pick' + i, () => this.setState({ objective: l })]]));
+    const quick = (on) => ({ height: '34px', padding: '0 14px', borderRadius: '8px', border: on ? '1px solid #14110B' : '1px solid #DDDDDD', background: on ? '#14110B' : '#FFFFFF', color: on ? '#F6F1E8' : '#3A3328', fontFamily: 'inherit', fontSize: '13px', fontWeight: 600, cursor: 'pointer', transition: 'all .2s' });
+    const creditQuick = [200000, 300000, 500000, 800000].map(v => ({ label: short(v), style: quick(credit === v), onClick: () => this.setState({ credit: v }) }));
+    const termBtns = [120, 150, 180, 200, 220].map(n => ({ n, onClick: () => this.setState({ term: n }), style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', padding: '12px 4px', borderRadius: '8px', border: 0, background: term === n ? '#14110B' : 'transparent', color: term === n ? '#F6F1E8' : '#3A3328', fontFamily: 'inherit', cursor: 'pointer', transition: 'all .2s', boxShadow: term === n ? '0 8px 18px -10px rgba(20,17,11,0.6)' : 'none' } }));
+    const hasBid = !!s.hasBid;
+    const simulate = () => {
+      const msg = `Olá! Gostaria de simular uma carta de crédito imobiliário com a RS Consultoria.\n\nObjetivo: ${s.objective}\nValor de crédito: ${brl(credit)}\nPrazo: ${term} meses${hasBid && s.bid ? '\nValor para lance: ' + brl(+s.bid) : ''}`;
+      window.open('https://wa.me/5553991244136?text=' + encodeURIComponent(msg), '_blank');
+    };
+    return {
+      wide, overlay, bgPos, cardCols,
+      simHeadCols: w >= 900 ? 'minmax(0,1.3fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      simPanelCols: w >= 1080 ? 'minmax(0,1.55fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      objGrid: w >= 1280 ? 'repeat(5,minmax(0,1fr))' : w >= 640 ? 'repeat(3,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
+      termGrid: 'repeat(5,minmax(0,1fr))',
+      ...objVals, creditQuick, termBtns, hasBid,
+      objective: s.objective, creditLabel: brl(credit), termLabel: term + ' meses',
+      bidLabel: hasBid && s.bid ? brl(+s.bid) : 'Sem lance',
+      toggleBid: () => this.setState({ hasBid: !hasBid }),
+      bidTrack: { position: 'relative', width: '46px', height: '26px', borderRadius: '13px', background: hasBid ? '#14110B' : '#DDDDDD', transition: 'background .25s', flexShrink: 0 },
+      bidKnob: { position: 'absolute', top: '3px', left: hasBid ? '23px' : '3px', width: '20px', height: '20px', borderRadius: '50%', background: hasBid ? '#E8C77C' : '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.25)', transition: 'all .25s' },
+      objCols: w >= 960 ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      objRatio: w >= 960 ? '4 / 5' : '16 / 10',
+      benCols: w >= 860 ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
+      cartaCols: w >= 1040 ? 'minmax(0,0.85fr) minmax(0,1.15fr)' : 'minmax(0,1fr)',
+      cartaSticky: w >= 1040 ? 'sticky' : 'static',
+      paraCols: w >= 960 ? 'minmax(0,0.9fr) minmax(0,1.1fr)' : 'minmax(0,1fr)',
+      paraRatio: w >= 960 ? '4 / 5' : '4 / 3',
+      stepCols: w >= 860 ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
+      stepsRef: this.stepsRef,
+      stepFill: { position: 'absolute', top: '-1px', left: 0, height: '2px', width: ((s.stepP || 0) * 100) + '%', background: 'linear-gradient(90deg,#B88E3E,#E8C77C)', transition: 'width .15s linear', pointerEvents: 'none' },
+      ...Object.fromEntries([0, 1, 2].map(i => { const on = (s.stepP || 0) >= ((s.dotPos || [0, .36, .72])[i] || 0) && (s.stepP || 0) > 0; return ['dot' + i, { position: 'absolute', top: '-6px', left: 0, width: '11px', height: '11px', borderRadius: '50%', background: on ? '#D9B25F' : '#0C0B09', border: '1.5px solid ' + (on ? '#D9B25F' : 'rgba(255,255,255,0.3)'), boxShadow: on ? '0 0 0 4px rgba(217,178,95,0.18)' : 'none', transition: 'all .3s', zIndex: 1 }]; })),
+      quemImgPos: w >= 960 ? 'absolute' : 'relative',
+      quemImgW: w >= 960 ? '52%' : '100%',
+      quemImgH: w >= 960 ? 'auto' : '360px',
+      quemFade: w >= 960 ? 'linear-gradient(90deg, #0C0B09 0%, rgba(12,11,9,0.6) 18%, rgba(12,11,9,0) 45%)' : 'linear-gradient(180deg, rgba(12,11,9,0) 50%, #0C0B09 100%)',
+      quemTextW: w >= 960 ? '540px' : '100%',
+      jucCols: w >= 960 ? 'minmax(0,0.85fr) minmax(0,1.15fr)' : 'minmax(0,1fr)',
+      jucRatio: w >= 960 ? '4 / 5' : '4 / 4',
+      ...(() => {
+        const N = this.DEPS.length, idx = s.depIdx ?? N, gap = 20;
+        const cw = s.depW || 1184;
+        const per = w >= 900 ? 3 : w >= 620 ? 2 : 1.15;
+        const cardW = (cw - gap * (Math.ceil(per) - 1)) / per;
+        const items = [...this.DEPS, ...this.DEPS, ...this.DEPS].map((d, i) => ({ ...d, style: { flex: '0 0 ' + cardW + 'px', display: 'flex', flexDirection: 'column', gap: '28px', padding: '32px', background: '#FAFAF8', border: '1px solid #EEEEEE', borderRadius: '10px', transition: 'all .35s ease', opacity: (i >= idx && i < idx + Math.ceil(per)) ? 1 : 0.4 } }));
+        const active = ((idx % N) + N) % N;
+        return {
+          depItems: items,
+          depTrack: { display: 'flex', gap: gap + 'px', transform: 'translateX(' + (-idx * (cardW + gap)) + 'px)', transition: s.depAnim === false ? 'none' : 'transform .7s cubic-bezier(.22,.7,.2,1)', willChange: 'transform' },
+          depNext: () => { this.depGo(idx + 1); this.depTick(); },
+          depPrev: () => { this.depGo(idx - 1); this.depTick(); },
+          depPause: () => this.setState({ depPaused: true }),
+          depResume: () => this.setState({ depPaused: false }),
+          depWrap: this.depWrap,
+          depDots: this.DEPS.map((_, i) => ({ onClick: () => { this.depGo(N + i); this.depTick(); }, style: { width: i === active ? '28px' : '8px', height: '8px', borderRadius: '4px', border: 0, padding: 0, cursor: 'pointer', background: i === active ? '#B8902F' : '#DDDDDD', transition: 'all .3s' } }))
+        };
+      })(),
+      faqCols: w >= 960 ? 'minmax(0,0.8fr) minmax(0,1.2fr)' : 'minmax(0,1fr)',
+      faqs: this.FAQ.map(([q, a], i) => { const open = (s.faqOpen ?? 0) === i; return {
+        q, a,
+        toggle: () => this.setState({ faqOpen: open ? -1 : i }),
+        vPath: open ? 'M12 12v0' : 'M12 5v14',
+        iconBox: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, borderRadius: '10px', border: '1px solid ' + (open ? '#14110B' : '#DDDDDD'), background: open ? '#14110B' : 'transparent', color: open ? '#E8C77C' : '#14110B', transition: 'all .3s' },
+        panel: { display: 'grid', gridTemplateRows: open ? '1fr' : '0fr', transition: 'grid-template-rows .4s ease' }
+      }; }),
+      ctaPos: w >= 820 ? '70% 35%' : '80% 30%',
+      ctaOverlay: w >= 820 ? 'linear-gradient(90deg, rgba(12,11,9,0.95) 0%, rgba(12,11,9,0.85) 38%, rgba(12,11,9,0.3) 70%, rgba(12,11,9,0.15) 100%)' : 'linear-gradient(180deg, rgba(12,11,9,0.7) 0%, rgba(12,11,9,0.92) 60%)',
+      footCols: w >= 1040 ? 'minmax(0,1.5fr) minmax(0,0.8fr) minmax(0,0.9fr) minmax(0,1.2fr)' : w >= 640 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      navWrap: { position: 'fixed', top: s.scrolled ? '0px' : Math.max(0, 34 - (s.sy || 0)) + 'px', left: 0, right: 0, zIndex: 50, pointerEvents: 'none' },
+      navPad: { padding: s.scrolled ? '10px clamp(12px,2vw,24px) 0' : '0', transition: 'padding .4s cubic-bezier(.22,.7,.2,1)' },
+      navBar: { pointerEvents: 'auto', width: '100%', maxWidth: s.scrolled ? '1312px' : '1376px', margin: '0 auto', padding: s.scrolled ? '12px 14px 12px 22px' : '22px clamp(20px,4vw,48px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', background: s.scrolled ? 'rgba(18,16,13,0.62)' : 'rgba(18,16,13,0)', backdropFilter: s.scrolled ? 'blur(18px) saturate(140%)' : 'none', WebkitBackdropFilter: s.scrolled ? 'blur(18px) saturate(140%)' : 'none', border: '1px solid ' + (s.scrolled ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0)'), borderRadius: s.scrolled ? '14px' : '0px', boxShadow: s.scrolled ? '0 20px 40px -20px rgba(0,0,0,0.6)' : 'none', transition: 'all .4s cubic-bezier(.22,.7,.2,1)' },
+      heroPadB: w >= 960 ? '140px' : '260px',
+      simPadT: w >= 960 ? '160px' : '260px',
+      cmpCols: w >= 760 ? 'minmax(160px,0.7fr) minmax(0,1.15fr) minmax(0,1fr)' : '120px 220px 200px',
+      cmpMinW: '',
+      credit,
+      onCredit: e => this.setState({ credit: +e.target.value }),
+      bidText: s.bid ? (+s.bid).toLocaleString('pt-BR') : '',
+      onBid: e => this.setState({ bid: e.target.value.replace(/\D/g, '').slice(0, 9) }),
+      simulate
+    };
+  }
+}
+</script>
+</body>
+</html>
